@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
@@ -46,7 +48,7 @@ router.post('/', (req, res, next) => {
       res.status(201)
         .location(`${req.originalUrl}/${newItem.id}`)
         .json(newItem.serialize());
-  })
+    })
     .catch(next);
 });
 

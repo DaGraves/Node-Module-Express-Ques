@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require('express');
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
@@ -12,7 +14,7 @@ app.use(express.static('public'));
 app.use(express.json());
 
 const todosRouter= require('./todosRouter');
-  app.use('/v1/todos', todosRouter);
+app.use('/v1/todos', todosRouter);
 
 
 
